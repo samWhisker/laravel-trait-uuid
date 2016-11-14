@@ -1,6 +1,6 @@
 <?php
 namespace Koodoo\laravelTraitUUID;
-use Webpatser\Uuid\Uuid;
+use function Webpatser\Uuid\Uuid;
 trait UUID
 {
     /**
@@ -11,7 +11,7 @@ trait UUID
         parent::boot();
 
         static::creating(function ($model) {
-            $model->{$model->getKeyName()} = Uuid::generate()->string;
+            $model->{$model->getKeyName()} = Webpatser\Uuid\Uuid::generate()->string;
         });
     }
 }
