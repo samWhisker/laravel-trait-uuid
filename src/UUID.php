@@ -11,7 +11,7 @@ trait UUID
         parent::boot();
 
         static::creating(function ($model) {
-            $model->{$model->getKeyName()} = Webpatser\Uuid\Uuid::generate()->string;
+            $model->{$model->getKeyName()} = \Webpatser\Uuid\Uuid::generate()->string;
         });
     }
 }
